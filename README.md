@@ -1,4 +1,4 @@
-# yii2-projekte by Rudi Kassel
+# yii2-MongoDB-Demo by Rudi Kassel
 I will develop Yii2 Projects here.
 My First Project will be an simple Basic Application with
 MongoDB.
