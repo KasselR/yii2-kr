@@ -6,29 +6,16 @@ body {
 .wrap {
     min-height: 100%;
     height: auto;
-    margin: 0 auto -60px;
-    padding: 0 0 60px;
-}
-
-.wrap > .container {
-    padding: 70px 15px 20px;
+    margin: 0 auto -37px;
+    padding: 0 0 35px;
 }
 
 .footer {
-    height: 60px;
+	height: 35px;
+    line-height: 15px;
     background-color: #f5f5f5;
     border-top: 1px solid #ddd;
-    padding-top: 20px;
-}
-
-.jumbotron {
-    text-align: center;
-    background-color: transparent;
-}
-
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+    padding-top: 10px;
 }
 
 .not-set {
@@ -88,4 +75,83 @@ a.desc:after {
     border-left: 3px solid #eed3d7;
     padding: 10px 20px;
     margin: 0 0 15px 0;
+}
+/* KAS */
+a{
+	color: #666;
+}
+/* Layout */
+.sidebar {
+	display: block;
+	padding: 0px;
+	height: 100%;
+}
+.sidebar .panel{
+	border-radius: 0px;
+}
+.navbar {
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+a.navbar-brand {
+    line-height: 42px;
+    padding: 3px 15px;
+}
+li.nav-comments{
+	line-height: 50px;
+}
+li.nav-comments .btn-comments{
+	background-color: #ddd;
+}
+li.nav-comments .fa,
+li.nav-comments span.badge{
+	color: #B90000 !important;
+}
+/* Inhalte */
+#placeholder-panel .panel-body{
+	text-align: center;
+	line-height: 300px;
+	height: inherit;
+	background-color: #ccc;
+}
+#placeholder-panel .panel-body i{
+	color: #ddd;
+}
+#user-detail .panel-body{
+	background-color: #EFEFEF;
+}
+.pagination{
+	margin:5px 0px 0px 0px;
+}
+
+.panel-heading button{
+	margin-left:3px;
+}
+
+#export-panel .panel-body {
+    height: inherit;
+    background-color: #ccc;
+}
+#export-form .form-group{
+	margin-bottom: 0px;
+}
+#user-form .form-control{
+	height: 22px;
+	padding: 3px 3px;
+}
+#user-form select.form-control{
+	height: 22px;
+	padding: 1px 3px;
+}
+#user-form .form-group{
+	margin-bottom: 0px;
+}
+.form-horizontal .control-label{
+	padding-top: 0px;
+}
+.form-horizontal table .form-group{
+	margin-left: 0px;
+}
+#docpicker table {
+	margin-bottom: 0px;
 }

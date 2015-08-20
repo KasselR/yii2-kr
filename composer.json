@@ -17,7 +17,11 @@
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.5",
         "yiisoft/yii2-bootstrap": "*",
-        "yiisoft/yii2-swiftmailer": "*"
+        "yiisoft/yii2-swiftmailer": "*",
+        
+        "yiisoft/yii2-mongodb": "~2.0.0",
+        "kartik-v/yii2-helpers": "*",
+        "kartik-v/yii2-widget-sidenav": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
@@ -25,7 +29,7 @@
         "yiisoft/yii2-gii": "*",
         "yiisoft/yii2-faker": "*",
         
-        "yiisoft/yii2-mongodb": "~2.0.0"
+        "yiisoft/yii2-apidoc": "~2.0.0"
     },
     "config": {
         "process-timeout": 1800

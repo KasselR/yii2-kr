@@ -27,4 +27,27 @@ class HelloController extends Controller
     {
         echo $message . "\n";
     }
+    
+    public function actionImport(){
+    	require 'vendor/autoload.php';
+
+		$db = new MongoClient("mongodb://localhost:27017");
+		$grid = $db->selectDB('xpps')->getGridFS();
+		$parser = new \Smalot\PdfParser\Parser();
+		
+		$dir = new RecursiveDirectoryIterator('C:\tmp\klett-cotta\daten\www.traumaundgewalt.de');
+		foreach(new RecursiveIteratorIterator($dir) as $file) {
+			if(!is_dir($file) AND ($file->getExtension() == "pdf")){
+				
+				$pdf = $parser->parseFile($file);
+				$metas = $pdf->getDetails();
+				echo basename($file). " path: ".  realpath($file) . "<br>";
+				#echo var_dump((string)$file)."<br>";
+				#$grid->storeFile((string)$file, array('metadata'=>$metas));
+			}
+		
+		}	
+    }
 }
+
+
