@@ -44,7 +44,7 @@ $config = [
         ],
         'mongodb' => [
             'class' => '\yii\mongodb\Connection',
-            'dsn' => 'mongodb://localhost:27017/xpps',
+            'dsn' => 'mongodb://localhost:27017/yii2',
         ],
         #'db' => require(__DIR__ . '/db.php'),
     ],

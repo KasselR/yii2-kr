@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace backend\models;
+namespace app\models;
 
 use yii\data\ActiveDataProvider;
 /**

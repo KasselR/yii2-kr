@@ -1,10 +1,10 @@
 <?php
-namespace backend\controllers;
+namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 use yii\data\ActiveDataProvider;
-use backend\models\Documents;
-use backend\models\Metadata;
+use app\models\Documents;
+#use app\models\Metadata;
 
 /**
  * Description of DocumentController
@@ -23,7 +23,7 @@ class DocumentController extends Controller{
 	public function actionIndex(){
 		Yii::$app->view->params['headline'] = 'Dokumenten Verwaltung';
 		
-		$searchModel = new \backend\models\DocumentSearch();
+		$searchModel = new \app\models\DocumentSearch();
 		
 		$model = $searchModel->search(Yii::$app->request->queryParams);
 		
@@ -65,7 +65,7 @@ class DocumentController extends Controller{
 		// Wir laden das gewählte Document
 		$model = Documents::findOne(new \MongoId($id));
 		// Wir machen aus dem Array ein Object ---------------------------------
-		$model->metadata = new Metadata($model->metadata);
+		#$model->metadata = new Metadata($model->metadata);
 		// Nur wenn auch ein POST gesendet wurde -------------------------------
 		if(\Yii::$app->request->isPost){
 			$post = \Yii::$app->request->post();
@@ -88,7 +88,7 @@ class DocumentController extends Controller{
 		// Wenn bereits neue Daten vorhanden sind, 
 		// laden wir diese für die Anzeige
 		if($model->metadatanew !== NULL){
-			$model->metadata = new Metadata($model->metadatanew);
+			#$model->metadata = new Metadata($model->metadatanew);
 		}
 		return $this->render('edit',[
 			'model'=>$model

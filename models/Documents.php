@@ -1,11 +1,11 @@
 <?php
-namespace backend\models;
+namespace app\models;
 
 use kartik\helpers\Html;
 use yii\helpers\Url;
 use yii\mongodb\file\ActiveRecord;
 use yii\behaviors\BlameableBehavior;
-use common\components\MongoDateBehavior;
+#use common\components\MongoDateBehavior;
 /**
  * Description of Documents
  *
@@ -21,12 +21,12 @@ class Documents extends ActiveRecord{
 	
 	public function behaviors() {
 		return [
-			[
-				'class'=>  MongoDateBehavior::className(),
-				'attributes' => [
-                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
-                ],
-			],
+			#[
+			#	'class'=>  MongoDateBehavior::className(),
+			#	'attributes' => [
+            #       ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+            #    ],
+			#],
 			[
 				'class' => BlameableBehavior::className(),
                 'updatedByAttribute' => 'updated_by',
@@ -168,7 +168,7 @@ class Documents extends ActiveRecord{
 		// Path vom Frontend hinzufügen ----------------------------------------
 		$bild   = "/thumbs/big/".$bild;
 		// Wir überprüfen ob die Bilddatei auch vorhanden ist ------------------
-		if(file_exists(\Yii::getAlias("@frontend")."/web".$bild) === false){
+		if(file_exists(\Yii::getAlias("@app")."/web".$bild) === false){
 			$bild = "http://yii2.local/thumbs/no-image.gif";
 		}
 		// Rückgabe ist der Bildpath -------------------------------------------

@@ -89,44 +89,15 @@ AppAsset::register($this);
 					// Edit zeigen wir nur an, wenn wir auch was editieren -----
 					['label'=>'Dokumente Bearbeiten','url'=>['document/edit'],'visible'=>$this->context->action->id === "edit"],
 					//----------------------------------------------------------
-					['label'=>'Gruppen Verwalten',	'url'=>''],
 					['label'=>'Upload',				'url'=>''],
 				];
-				$blogItems = [
-					['label'=>'Blog Verwalten',		'url'=>['/blogs/list']],
-					['label'=>'Eintrag Erstellen',	'url'=>['/blogs/create']],
-					['label'=>'Eintrag bearbeiten',	'url'=>['/blogs/edit'],'visible'=>$this->context->action->id === "edit"],
-				];
-				$licItems = [
-					['label'=>'Lizenzen Verwalten',	'url'=>''],
-					#['label'=>'Lizenz 2','url'=>''],
-					#['label'=>'Lizenz 3','url'=>''],
-				];
-				$priceItems = [
-					['label'=>'Preise Verwalten','url'=>''],
-					#['label'=>'Preis 2','url'=>''],
-					#['label'=>'Preis 3','url'=>''],
-				];
 				$settingItems = [
-					['label'=>'PDF Sicherheit',		'url'=>''],
-					['label'=>'Metadaten Felder',	'url'=>''],
 					['label'=>'<span class="pull-right badge">5</span> Logs', 'url'=>'','active' => ($item == 'Logs')],
 					['label'=>'RBAC', 'url'=>['/rbac']],
-				];
-				$markItems = [
-					['label'=>'Kampagnen Verwalten','url'=>''],
-					#['label'=>'Metadaten Felder','url'=>''],
-					#['label'=>'Preis 3','url'=>''],
 				];
 				$xItems = [
 					['label'=>'Batch','url'=>['/xsearch/batch']],
 					['label'=>'Export','url'=>['/xsearch/export']],
-					#['label'=>'Preis 3','url'=>''],
-				];
-				$statItems = [
-					['label'=>'Standard','url'=>['/xstat/default/index']],
-					['label'=>'Counter','url'=>['/xstat/counter/index']],
-					['label'=>'Suchen','url'=>['/xstat/query/index']],
 					#['label'=>'Preis 3','url'=>''],
 				];
 				echo SideNav::widget([
@@ -138,13 +109,9 @@ AppAsset::register($this);
 						['label'=>'<i class="fa fa-cloud-upload"></i>&nbsp;Publizierungen','url'=>['/document/publish'],'visible'=>!\Yii::$app->user->isGuest],
 						['label'=>'<i class="fa fa-users"></i>&nbsp;Benutzer','items'=>$userItems,'visible'=>!\Yii::$app->user->isGuest],
 						['label'=>'Dokumente','items'=>$dokItems,	'icon'=>'file','visible'=>!\Yii::$app->user->isGuest],
-						['label'=>'Lizenzen','items'=>$licItems,	'icon'=>'tags','visible'=>!\Yii::$app->user->isGuest],
-						['label'=>'Preise','items'=>$priceItems,	'icon'=>'euro','visible'=>!\Yii::$app->user->isGuest],
-						['label'=>'Blog','items'=>$blogItems,		'icon'=>'book','visible'=>!\Yii::$app->user->isGuest],
-						['label'=>'Marketing','items'=>$markItems,	'icon'=>'road','visible'=>!\Yii::$app->user->isGuest],
+				
 						['label'=>'X-Search','items'=>$xItems,		'icon'=>'search','visible'=>!\Yii::$app->user->isGuest],
-						['label'=>'Statistik','items'=>$statItems,	'icon'=>'stats','visible'=>!\Yii::$app->user->isGuest],
-						[],
+				
 						['label'=>'Einstellungen','items'=>$settingItems,		'icon'=>'cog','visible'=>!\Yii::$app->user->isGuest],
 						
 						['label'=>'Über uns','url'=>'',				'icon'=>'question-sign','visible'=>Yii::$app->user->isGuest],

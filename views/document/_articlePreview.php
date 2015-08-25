@@ -3,7 +3,7 @@ use yii\bootstrap\Button;
 use yii\bootstrap\Tabs;
 use yii\helpers\Url;
 use kartik\helpers\Html;
-use frontend\widgets\XButtonsRow;
+#use frontend\widgets\XButtonsRow;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Article */
@@ -26,34 +26,34 @@ $bigImg		= $model->getImageBig();
 			<h4 style="font-size:0.9em;margin:0px;"><?=$model->getArticleinfo();?></h4>
 			<?php
 			// Buttons erzeugen ------------------------------------------------
-			echo XButtonsRow::widget([
-				'containerOptions'=>['style'=>'position:relative; bottom:-20px;'],
-				'items'=>[
-					[
-						'label'=>'PDF',
-						'id'=>'download',
-						'visible'=>(\Yii::$app->user->isGuest),
-						'url'=>Url::toRoute(['xsearch/addbasket'])
-					],
-					[
-						'label'=>'Download PDF',
-						'id'=>'download',
-						'visible'=>(\Yii::$app->user->isGuest),
-						'url'=>Url::toRoute(['xsearch/addbasket']),
-						'icon'=>'fa-download',
-					],
-					[
-						'label'=>'Vorschau',
-						'id'=>'preview',
-						'visible'=>true,
-						'icon'=>'fa-search',
-						'url'=>''
-					],
-				],
-				'btnOptions'=>[
-					'style'=>'width:180px;'
-				]
-			]);
+			#echo XButtonsRow::widget([
+			#	'containerOptions'=>['style'=>'position:relative; bottom:-20px;'],
+			#	'items'=>[
+			#		[
+			#			'label'=>'PDF',
+			#			'id'=>'download',
+			#			'visible'=>(\Yii::$app->user->isGuest),
+			#			'url'=>Url::toRoute(['xsearch/addbasket'])
+			#		],
+			#		[
+			#			'label'=>'Download PDF',
+			#			'id'=>'download',
+			#			'visible'=>(\Yii::$app->user->isGuest),
+			#			'url'=>Url::toRoute(['xsearch/addbasket']),
+			#			'icon'=>'fa-download',
+			#		],
+			#		[
+			#			'label'=>'Vorschau',
+			#			'id'=>'preview',
+			#			'visible'=>true,
+			#			'icon'=>'fa-search',
+			#			'url'=>''
+			#		],
+			#	],
+			#	'btnOptions'=>[
+			#		'style'=>'width:180px;'
+			#	]
+			#]);
 			//------------------------------------------------------------------
 			?>
 		</div>

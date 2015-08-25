@@ -1,11 +1,11 @@
 <?php
 use kartik\helpers\Html;
 use yii\grid\GridView;
-use backend\models\Zstitel;
+#use backend\models\Zstitel;
 use yii\widgets\Pjax;
-use backend\components\XActionColumn;
+use app\components\XActionColumn;
 
-$zs = new Zstitel;
+$zs = [];#new Zstitel;
 Pjax::begin(['id'=>'docpicker-pjax']);
 echo Html::panel([
 	'heading' => 'Summary',
@@ -28,7 +28,7 @@ echo Html::panel([
 				
 			],
 			'eye'=>[
-				'class' => 'backend\components\XActionColumn',
+				'class' => 'app\components\XActionColumn',
 				'options'=>['style'=>'width:20px'],
 				'buttonOptions'=>['style'=>'color:green;'],
 				'template'=>'{view}',
@@ -41,12 +41,12 @@ echo Html::panel([
 				'filter'=>Html::textInput('filename',Yii::$app->request->get('filename'),['class'=>'form-control input-sm','placeholder'=>'*Filter']),
 				'options'=>['style'=>'width:240px;']
 			],
-			'metadata.ZSTITEL'=>[
-				'label'=>'Zeitschrift',
-				'attribute'=>'metadata.ZSTITEL',
-				'filter'=>Html::dropDownList('zs',  Yii::$app->request->get('zs'),  $zs->reverseFields(),['class'=>'form-control input-sm','prompt'=>'- Filter -']),
-				'options'=>['style'=>'width:140px;']
-			],
+			#'metadata.ZSTITEL'=>[
+			#	'label'=>'Zeitschrift',
+			#	'attribute'=>'metadata.ZSTITEL',
+			#	'filter'=>Html::dropDownList('zs',  Yii::$app->request->get('zs'),  $zs->reverseFields(),['class'=>'form-control input-sm','prompt'=>'- Filter -']),
+			#	'options'=>['style'=>'width:140px;']
+			#],
 			'titel'=>[
 				'label'=>'Titel',
 				'attribute'=>'metadata.TITEL',
@@ -56,7 +56,7 @@ echo Html::panel([
 			'groups'=>[
 				'label'=>'Gruppe/n',
 				'attribute'=>'groupstr',
-				'filter'=>Html::dropDownList('group',  Yii::$app->request->get('group'),  backend\models\Documents::getAllgroups(),['class'=>'form-control input-sm','prompt'=>'- Filter -']),
+				'filter'=>Html::dropDownList('group',  Yii::$app->request->get('group'),  app\models\Documents::getAllgroups(),['class'=>'form-control input-sm','prompt'=>'- Filter -']),
 				'enableSorting'=>true,
 				'options'=>['style'=>'width:110px;']
 			],
