@@ -1,5 +1,4 @@
 # yii2-MongoDB-Demo by Rudi Kassel
-I will develop Yii2 Projects here.
 My First Project will be an simple Basic Application with
 MongoDB.
 
@@ -9,6 +8,7 @@ MongoDB.
 * ListView usage
 * CRUD operations with MongoDB
 * AJax usage via Pjax
+* GridFS usage
 
 ## first steps
 1. Yii2 ready System (php/webserver/mongo)
